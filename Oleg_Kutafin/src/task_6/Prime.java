@@ -9,25 +9,31 @@ public class Prime {
     public static void main(String args[]) {
         int temp;
         boolean isPrime=true;
+        String exit;
+        boolean done = true;
         Scanner scan= new Scanner(System.in);
-        System.out.println("Введите число для проверки:");
-
-        // считывает число
-        int num=scan.nextInt();
-
-        // проверяем число на простоту
-        for (int i=2; i<=num/2; i++) {
-            temp = num % i;
-            if (temp == 0) {
-                isPrime = false;
-                break;
+        while(done) {
+            System.out.println("Введите число для проверки:");
+            int num = scan.nextInt();
+            for (int i = 2; i <= num / 2; i++) {
+                temp = num % i;
+                if (temp == 0) {
+                    isPrime = false;
+                    break;
+                }
             }
-        }
-        // если переменная isPrime равна true, то число простое
-        if(isPrime) {
-            System.out.println(num + " - простое число");
-        } else {
-            System.out.println(num + " - составное число");
+            if (isPrime) {
+                System.out.println(num + " - простое число");
+            } else {
+                System.out.println(num + " - составное число");
+            }
+            System.out.println("Хотите проверить ещё одно число? y/n?");
+            exit = scan.next();
+            switch (exit) {
+                case"n":
+                    done = false;
+                    break;
+            }
         }
     }
 }
