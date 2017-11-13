@@ -12,7 +12,7 @@ public class RevertString {
         System.out.println(recursiveReverse(toRevert));
     }
 
-    private static String reverseByArray(String s) {
+   public static String reverseByArray(String s) {
         char[] a = s.toCharArray();
         char[] b = new char[a.length];
         for (int i = 0; i < a.length; i++) {
@@ -20,7 +20,8 @@ public class RevertString {
         }
         return new String(b);
     }
-    private static String recursiveReverse(String s) {
+
+    public static String recursiveReverse(String s) {
         if ((null == s) || (s.length() <= 1)) {
             return s;
         }
